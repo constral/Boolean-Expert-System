@@ -1,0 +1,77 @@
+given
+- set universe
+- set substances
+- set baryons
+- set quarks
+- set protons
+- set protons_contained_by_atoms
+- set protons_uncontained_by_atoms
+- set neutrons
+- set neutrons_contained_by_atoms
+- set neutrons_uncontained_by_atoms
+- set leptons
+- set electrons
+- set electrons_contained_by_atoms
+- set electrons_uncontained_by_atoms
+- set atoms			/* property: the set of (protons & neutrons & electrons that are bound together) */
+- set terra 		/* property: atoms making up the planet Terra */
+
+- set lifeforms 	/* property: atoms making up the lifeforms of the planet Terra */
+- set prokaryotes
+- set eukaryotes	/* we shall skip mentioning every single genus or other ways of categorizing lifeforms */
+- set animalia
+- set arthropodae
+- set insectae
+- set ants
+- set leafcutter_ants
+- set herder_ants
+- set aphids
+- set plantae
+- set angiosperms
+- set angiosperm_leaves
+- set fungi
+- set lepitotaceae
+
+- set lifeforms_that_are_eusocial
+/* demonstration that animals can be categorized simultaneously by: families, relationships to their species, relationships to other species, etc. */
+- set lifeforms_that_are_in_a_farmer_farmed_relationship
+/* we shall skip mentioning who is the farmer and who is the farmed here. this may be done using other sets, such as: lifeforms_that_farm_fungi -> lifeforms_that_farm_lepitotaceae -> ants_that_farm_lepitotaceae -> leafcutter_ants; OR lifeforms_that_are_farmed_by_ants -> lifeforms_that_are_farmed_by_leafcutter_ants -> fungi_that_are_farmed_by_leafcutter_ants -> lepitotaceae; */
+- set lifeforms_that_are_in_a_farmer_crop_relationship
+- set lifeforms_that_are_in_a_farmer_cattle_relationship
+
+
+
+- rel universe substances 3 1 		/* arguable if this is the correct relation type, or if '4' is */
+- rel substances baryons 3 1
+- rel baryons quarks 3 1
+- rel quarks protons 3 1
+- rel protons protons_contained_by_atoms 3 1
+- rel protons protons_uncontained_by_atoms 3 1		/* instead of making the relation "protons_contained_by_atoms atoms" a 5 type, we make it a 3 type and make another set, "protons_uncontained_by_atoms" */
+- rel protons_contained_by_atoms atoms 3 1
+- rel quarks neutrons 3 1
+- rel neutrons neutrons_contained_by_atoms 3 1
+- rel neutrons neutrons_uncontained_by_atoms 3 1
+- rel neutrons_contained_by_atoms atoms 3 1
+- rel substances leptons 3 1
+- rel leptons electrons 3 1
+- rel electrons electrons_contained_by_atoms 3 1
+- rel electrons electrons_uncontained_by_atoms 3 1
+- rel electrons_contained_by_atoms atoms 3 1
+- rel atoms terra 3 1
+
+- rel terra lifeforms 3 1
+- rel lifeforms prokaryotes 3 1
+- rel lifeforms eukaryotes 3 1
+- rel eukaryotes animalia 3 1
+- rel animalia arthropodae 3 1
+- rel arthropodae insectae 3 1
+- rel insectae ants 3 1
+- rel ants leafcutter_ants 3 1
+- rel ants herder_ants 3 1
+- rel insectae aphids 3 1
+- rel eukaryotes plantae 3 1
+- rel plantae angiosperms 3 1
+- rel angiosperms angiosperm_leaves 3 1
+- rel eukaryotes fungi 3 1
+- rel fungi lepitotaceae 3 1
+nevig

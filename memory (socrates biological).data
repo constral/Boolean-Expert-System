@@ -1,0 +1,28 @@
+given
+- set life
+- set prokaryotes
+- set eukaryotes
+- set plants
+- set animals
+- set fungi
+- rel life prokaryotes 3 1
+- rel life eukaryotes 3 1
+- rel life plants 3 1
+- rel life animals 3 1
+- rel life fungi 3 1
+/* 25 relations to state that they can't be each other? */
+
+- set reptile_descendants
+- rel animals reptile_descendants 3 1
+
+- set mammals
+- set birds
+- rel reptile_descendants mammals 3 1
+- rel reptile_descendants birds 3 1
+
+- set humans
+- rel mammals humans 3 1
+
+- set socrates
+- rel humans socrates 3 1
+nevig
